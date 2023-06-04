@@ -1,0 +1,132 @@
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 9 files
+Detected 4 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: e3d_lstm/run.py
+--------------------------------------------------------------------------------
+e3d_lstm/run.py:162:6: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+File: e3d_lstm/src/models/model_factory.py
+--------------------------------------------------------------------------------
+e3d_lstm/src/models/model_factory.py:148:4: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+File: e3d_lstm/src/layers/rnn_cell.py
+--------------------------------------------------------------------------------
+e3d_lstm/src/layers/rnn_cell.py:96:6: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+e3d_lstm/src/layers/rnn_cell.py:97:6: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+================================================================================
+Detailed log follows:
+
+================================================================================
+================================================================================
+Input tree: 'e3d_lstm/'
+================================================================================
+--------------------------------------------------------------------------------
+Processing file 'e3d_lstm/run.py'
+ outputting to 'e3d_lstm_v2/run.py'
+--------------------------------------------------------------------------------
+
+29:8: INFO: Renamed 'tf.app.flags' to 'tf.compat.v1.app.flags'
+75:5: INFO: Renamed 'tf.gfile.Exists' to 'tf.io.gfile.exists'
+76:4: INFO: Renamed 'tf.gfile.DeleteRecursively' to 'tf.io.gfile.rmtree'
+77:2: INFO: Renamed 'tf.gfile.MakeDirs' to 'tf.io.gfile.makedirs'
+78:5: INFO: Renamed 'tf.gfile.Exists' to 'tf.io.gfile.exists'
+79:4: INFO: Renamed 'tf.gfile.DeleteRecursively' to 'tf.io.gfile.rmtree'
+80:2: INFO: Renamed 'tf.gfile.MakeDirs' to 'tf.io.gfile.makedirs'
+162:6: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+183:2: INFO: Renamed 'tf.app.run' to 'tf.compat.v1.app.run'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'e3d_lstm/src/trainer.py'
+ outputting to 'e3d_lstm_v2/src/trainer.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'e3d_lstm/src/models/eidetic_3d_lstm_net.py'
+ outputting to 'e3d_lstm_v2/src/models/eidetic_3d_lstm_net.py'
+--------------------------------------------------------------------------------
+
+60:7: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+68:11: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+93:16: INFO: Renamed 'tf.layers.conv3d' to 'tf.compat.v1.layers.conv3d'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'e3d_lstm/src/models/model_factory.py'
+ outputting to 'e3d_lstm_v2/src/models/model_factory.py'
+--------------------------------------------------------------------------------
+
+59:8: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+68:27: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+80:17: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+81:15: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+87:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+88:12: INFO: Renamed 'tf.get_variable_scope' to 'tf.compat.v1.get_variable_scope'
+97:23: INFO: Renamed 'tf.trainable_variables' to 'tf.compat.v1.trainable_variables'
+121:16: INFO: Renamed 'tf.global_variables' to 'tf.compat.v1.global_variables'
+122:17: INFO: Renamed 'tf.train.Saver' to 'tf.compat.v1.train.Saver'
+123:11: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+124:18: INFO: Renamed 'tf.ConfigProto' to 'tf.compat.v1.ConfigProto'
+127:16: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+148:4: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'e3d_lstm/src/utils/preprocess.py'
+ outputting to 'e3d_lstm_v2/src/utils/preprocess.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'e3d_lstm/src/data_provider/kth_action.py'
+ outputting to 'e3d_lstm_v2/src/data_provider/kth_action.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'e3d_lstm/src/data_provider/mnist.py'
+ outputting to 'e3d_lstm_v2/src/data_provider/mnist.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'e3d_lstm/src/data_provider/datasets_factory.py'
+ outputting to 'e3d_lstm_v2/src/data_provider/datasets_factory.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'e3d_lstm/src/layers/rnn_cell.py'
+ outputting to 'e3d_lstm_v2/src/layers/rnn_cell.py'
+--------------------------------------------------------------------------------
+
+92:17: INFO: tf.constant_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+92:17: INFO: Renamed 'tf.constant_initializer' to 'tf.compat.v1.constant_initializer'
+93:16: INFO: tf.constant_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+93:16: INFO: Renamed 'tf.constant_initializer' to 'tf.compat.v1.constant_initializer'
+94:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+96:6: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+96:6: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+97:6: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+97:6: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+164:13: INFO: Renamed 'tf.layers.conv2d' to 'tf.compat.v1.layers.conv2d'
+167:13: INFO: Renamed 'tf.layers.conv3d' to 'tf.compat.v1.layers.conv3d'
+171:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+--------------------------------------------------------------------------------
+
