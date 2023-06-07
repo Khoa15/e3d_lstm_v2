@@ -161,10 +161,10 @@ class EideticLSTMCell(object):
 
   def _conv(self, inputs, output_channels, kernel_shape):
     if self._conv_ndims == 2:
-      return tf.compat.v1.layers.conv2d(
+      return tf.compat.v1.layers.Conv2D(
           inputs, output_channels, kernel_shape, padding="same")
     elif self._conv_ndims == 3:
-      return tf.compat.v1.layers.conv3d(
+      return tf.compat.v1.layers.Conv3D(
           inputs, output_channels, kernel_shape, padding="same")
 
   def __call__(self, inputs, hidden, cell, global_memory, eidetic_cell):

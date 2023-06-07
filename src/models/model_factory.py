@@ -21,7 +21,7 @@ from __future__ import print_function
 import os
 from src.models import eidetic_3d_lstm_net
 import tensorflow as tf
-
+tf.compat.v1.disable_eager_execution()
 
 def adam_updates(params, cost_or_grads, lr=0.001, mom1=0.9, mom2=0.999):
   """Builds an adam optimizer."""
