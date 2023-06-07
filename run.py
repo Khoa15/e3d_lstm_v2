@@ -26,7 +26,7 @@ from src.utils import preprocess
 import tensorflow as tf
 
 # -----------------------------------------------------------------------------
-FLAGS = tf.compat.v1.app.flags.FLAGS
+FLAGS = tf.compat.v1.app.flags
 
 FLAGS.DEFINE_string('train_data_paths', '', 'train data paths.')
 FLAGS.DEFINE_string('valid_data_paths', '', 'validation data paths.')
