@@ -145,6 +145,7 @@ class Model(object):
 
   def save(self, itr):
     checkpoint_path = os.path.join(self.configs.save_dir, 'model.ckpt')
+    
     self.saver.save(self.sess, checkpoint_path, global_step=itr)
     print('saved to ' + self.configs.save_dir)
 
